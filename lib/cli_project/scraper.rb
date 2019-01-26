@@ -10,7 +10,7 @@ class CliProject::Scraper
     movies = page.css("div.list_item")
     movie_titles = movies.css("td.overview-top h4 a")
     movie_titles.map do |movie_card|
-      Cli::Project.new(movie_card.text)
+      CliProject::Movie.new(movie_card.text)
     #puts movie_card.css("td.overview-top h4 a").text
     end
   end
