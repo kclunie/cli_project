@@ -1,6 +1,6 @@
 class Cli_project::CLI
 
-def start
+def call
     Cli_project::Scraper.new.make_newmovies
     puts "Welcome to Upcoming Movies"
     start
