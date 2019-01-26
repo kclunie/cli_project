@@ -5,8 +5,12 @@ class CliProject::Scraper
   #end
   
   def self.scrape_movies(url)
-    puts "now in scrape_movies method"
-    
+    #puts "now in scrape_movies method"
+    page = Nokogiri::HTML(open(url))
+    movies = page.css("div.list_item")
+    movies.each do |movie_card|
+    puts movie_card.css("td.overview-top h4 a").text
+    end
   end
   
   

@@ -4,6 +4,8 @@ def call
     #CliProject::Scraper.new.make_newmovies
     puts "Welcome to Upcoming Movies!"
     puts "What movie would you like more information on?"
+    url = "https://www.imdb.com/movies-coming-soon/"
+    CliProject::Scraper.scrape_movies(url)
     input = gets.strip.downcase
     case input
     when "red"
@@ -12,8 +14,7 @@ def call
         puts 'blue'
       end
     #scrape movies
-    url = "https://www.imdb.com/movies-coming-soon/"
-    CliProject::Scraper.scrape_movies(url)
+  
   end
 
 
@@ -42,10 +43,10 @@ def call
   #  end
 #  end
 
- # def print_movies
-  #  movie.all.each.with_index do |movie, index|
-   #  puts "#{index}. #{movie.name}"
-#    end
- # end
+  #def print_movies
+   # movies.all.each.with_index do |movie, index|
+    # puts "#{index}. #{movie.title}"
+  #  end
+#  end
 
 end
