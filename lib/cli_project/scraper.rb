@@ -8,8 +8,10 @@ class CliProject::Scraper
     #puts "now in scrape_movies method"
     page = Nokogiri::HTML(open(url))
     movies = page.css("div.list_item")
-    movies.each do |movie_card|
-    puts movie_card.css("td.overview-top h4 a").text
+    movie_titles = movies.css("td.overview-top h4 a")
+    movie_titles.map do |movie_card|
+      Cli::Project.new(movie_card.text)
+    #puts movie_card.css("td.overview-top h4 a").text
     end
   end
   
