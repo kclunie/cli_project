@@ -5,36 +5,41 @@ def call
     puts "Welcome to Upcoming Movies!"
     puts "What movie would you like more information on?"
     input = gets.strip.downcase
+    #scrape movies
+    url = https://www.imdb.com/movies-coming-soon/
+    CliProject::Scraper.scrape_movies(url)
   end
 
-  def start
-    print_movies
-    puts "What movie would you like more information on?"
-    input = gets.strip.to_i
 
-    movie = Cli_project::Movie.find(input.to_i)
 
-    print_movie(movie)
+#  def start
+ #   print_movies
+  #  puts "What movie would you like more information on?"
+  #  input = gets.strip.to_i
 
-    puts ""
-    puts "Would you like to see another movie? Enter Y or N"
+   # movie = CliProject::Movie.find(input.to_i)
 
-    input = gets.strip.downcase
-    if input == "y"
-      start
-    elsif input == "n"
-      puts "Thank you! Have a great day!"
-      exit
-    else
-      puts "I don't understand that answer."
-      start
-    end
-  end
+  #  print_movie(movie)
 
-  def print_movies
-    movie.all.each.with_index do |movie, index|
-     puts "#{index}. #{movie.name}"
-    end
-  end
+   # puts ""
+  #   puts "Would you like to see another movie? Enter Y or N"
+
+   # input = gets.strip.downcase
+  #  if input == "y"
+   #   start
+  #  elsif input == "n"
+   #   puts "Thank you! Have a great day!"
+    #  exit
+  #  else
+   #   puts "I don't understand that answer."
+    #  start
+  #  end
+#  end
+
+ # def print_movies
+  #  movie.all.each.with_index do |movie, index|
+   #  puts "#{index}. #{movie.name}"
+#    end
+ # end
 
 end

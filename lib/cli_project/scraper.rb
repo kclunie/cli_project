@@ -1,8 +1,14 @@
 class CliProject::Scraper
 
-  def get_page
-    page = Nokogiri::HTML(open("https://www.imdb.com/movies-coming-soon/"))
+  #def get_page
+   # page = Nokogiri::HTML(open("https://www.imdb.com/movies-coming-soon/"))
+  #end
+  
+  def self.srape_movies(url)
+    
+    
   end
+  
   
   #def scrape_movies_index
    # movies = page.css("div.list_item").text
