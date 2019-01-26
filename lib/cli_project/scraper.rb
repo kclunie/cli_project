@@ -4,8 +4,8 @@ class CliProject::Scraper
    # page = Nokogiri::HTML(open("https://www.imdb.com/movies-coming-soon/"))
   #end
   
-  def self.srape_movies(url)
-    
+  def self.scrape_movies(url)
+    puts "now in scrape_movies method"
     
   end
   

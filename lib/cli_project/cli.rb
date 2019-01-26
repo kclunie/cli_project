@@ -5,8 +5,14 @@ def call
     puts "Welcome to Upcoming Movies!"
     puts "What movie would you like more information on?"
     input = gets.strip.downcase
+    case input
+    when "red"
+      puts "red"
+      when "blue"
+        puts 'blue'
+      end
     #scrape movies
-    url = https://www.imdb.com/movies-coming-soon/
+    url = "https://www.imdb.com/movies-coming-soon/"
     CliProject::Scraper.scrape_movies(url)
   end
 
