@@ -30,7 +30,7 @@ def call
     end
   end
 
-  def print_movie
+  def print_movies
     movie.all.each.with_index do |movie, index|
      puts "#{index}. #{movie.name}"
     end
