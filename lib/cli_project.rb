@@ -1,18 +1,20 @@
 #environment file
-require "cli_project/version"
+#require "cli_project/version"
 
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
 
-require_relative './lib/cli_project/scraper'
-require_relative './lib/cli_project/movie'
-require_relative './lib/cli_project/cli'
-require_relative './lib/cli_project/version'
+require_relative "cli_project/version"
+require_relative "cli_project/cli"
+require_relative "cli_project/scraper"
+require_relative "cli_project/movie"
 
 
 
-module CliProject
-  class Error < StandardError; end
+
+
+#module CliProject
+ # class Error < StandardError; end
   # Your code goes here...
-end
+#end

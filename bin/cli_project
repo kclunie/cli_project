@@ -2,4 +2,4 @@
 
 require_relative "../lib/cli_project"
 
-Cli_project::CLI.new.call   #creating a new instance to apply the start method to.
+CliProject::CLI.new.call   #creating a new instance to apply the start method to.

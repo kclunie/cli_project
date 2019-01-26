@@ -1,9 +1,9 @@
-class Cli_project::CLI
+class CliProject::CLI
 
 def call
-    Cli_project::Scraper.new.make_newmovies
-    puts "Welcome to Upcoming Movies"
-    start
+    #CliProject::Scraper.new.make_newmovies
+    puts "Welcome to Upcoming Movies!"
+    #start
   end
 
   def start
@@ -34,5 +34,6 @@ def call
     movie.all.each.with_index do |movie, index|
      puts "#{index}. #{movie.name}"
     end
-    
+  end
+
 end

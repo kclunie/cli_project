@@ -1,4 +1,4 @@
-class Cli_project::Movie
+class CliProject::Movie
   
   attr_accessor :title, :description
   
