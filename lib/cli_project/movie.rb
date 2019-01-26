@@ -4,7 +4,7 @@ class CliProject::Movie
   
   @@all = []
   
-   def initialize(title=nil, description=nil)
+   def initialize(title=nil, description=nil, director=nil)
     @title = title
     @description = description
     @director = director
