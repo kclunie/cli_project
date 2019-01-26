@@ -3,7 +3,8 @@ class CliProject::CLI
 def call
     #CliProject::Scraper.new.make_newmovies
     puts "Welcome to Upcoming Movies!"
-    #start
+    puts "What movie would you like more information on?"
+    input = gets.strip.downcase
   end
 
   def start
