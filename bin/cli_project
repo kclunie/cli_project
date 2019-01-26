@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby  #shebang/executable line
+
+require_relative "../lib/cli_project"
+
+Cli_project::CLI.new.start   #creating a new instance to apply the start method to.
