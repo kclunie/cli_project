@@ -36,7 +36,7 @@ def call
     max_value = CliProject::Movie.all.length 
     if input.between?(1,max_value)
       chosen_movie = CliProject::Movie.all[input-1]
-      display_movie_items(chosen_movie)
+      display_movie_description(chosen_movie)
     else
       puts "\nPlease put in a valid input"
       print_movies #list_categories
@@ -44,7 +44,7 @@ def call
     end
   end
   
-    def display_movie_items(chosen_movie)
+    def display_movie_description(chosen_movie)
     CliProject::Scraper.scrape_movie_descriptions(chosen_movie)
     chosen_movie.description 
   end
