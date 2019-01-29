@@ -6,8 +6,13 @@ def call
     puts "What movie would you like more information on?"
     url = "https://www.imdb.com/movies-coming-soon/"
     movieoptions = CliProject::Scraper.scrape_movies(url)
-    puts movieoptions[0].title
+    print_movies
+    #movieoptions.all.each.with_index(1) do |movie, index|
+     #puts "#{index}. #{movie.title}"
+   #end
+    #puts movieoptions[0].title
     input = gets.strip.downcase
+
     case input
     when "red"
       puts "red"
@@ -16,6 +21,12 @@ def call
       end
     #scrape movies
   
+  end
+
+  def print_movies
+    CliProject::Movie.all.each.with_index(1) do |movie, index|
+     puts "#{index}. #{movie.title}"
+    end
   end
 
 
