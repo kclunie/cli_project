@@ -9,12 +9,12 @@ def call
     choose_movie
     #input = gets.strip.downcase
 
-    case input
-    when "red"
-      puts "red"
-      when "blue"
-        puts 'blue'
-      end
+    #case input
+    #when "red"
+     # puts "red"
+      #when "blue"
+       # puts 'blue'
+      #end
     #scrape movies
   
   end
