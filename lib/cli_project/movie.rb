@@ -4,9 +4,9 @@ class CliProject::Movie
   
   @@all = []
   
-   def initialize(title=nil, description=nil, director=nil)
+   def initialize(title=nil, director=nil)
     @title = title
-    @description = description
+    @description = []
     @director = director
     @@all << self
   end
