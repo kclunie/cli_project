@@ -6,8 +6,8 @@ def call
     puts "What movie would you like more information on?"
     scrape_movies
     print_movies
-   
-    input = gets.strip.downcase
+    choose_movie
+    #input = gets.strip.downcase
 
     case input
     when "red"
@@ -30,7 +30,24 @@ def call
     movieoptions = CliProject::Scraper.scrape_movies(url)
   end
 
-
+  def choose_movie
+    puts "\nChoose a movie by selecting a number:"
+    input = gets.strip.to_i 
+    max_value = CliProject::Movie.all.length 
+    if input.between?(1,max_value)
+      chosen_movie = CliProject::Movie.all[input-1]
+      display_movie_items(chosen_movie)
+    else
+      puts "\nPlease put in a valid input"
+      print_movies #list_categories
+      choose_movie
+    end
+  end
+  
+    def display_movie_items(chosen_movie)
+    CliProject::Scraper.scrape_movie_descriptions(chosen_movie)
+    chosen_movie.description 
+  end
 
 
 #  def start
