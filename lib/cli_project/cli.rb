@@ -5,8 +5,8 @@ def call
     puts "Welcome to Upcoming Movies!"
     puts "What movie would you like more information on?"
     scrape_movies
-    #print_movies
-    #choose_movie
+    print_movies
+    choose_movie
     
     #input = gets.strip.downcase
     #case input
@@ -28,8 +28,6 @@ def call
  def scrape_movies
     url = "https://www.imdb.com/movies-coming-soon/"
     movieoptions = CliProject::Scraper.scrape_movies(url)
-    puts movieoptions[1].title
-    puts movieoptions[1].url
   end
 
   def choose_movie
@@ -37,10 +35,11 @@ def call
     input = gets.strip.to_i 
     max_value = CliProject::Movie.all.length 
     if input.between?(1,max_value)
-      chosen_movie = CliProject::Movie.all[input-1]
-      display_movie_description(chosen_movie)
+      puts "yay"
+      #chosen_movie = CliProject::Movie.all[input-1]
+      #display_movie_description(chosen_movie)
     else
-      puts "\nPlease put in a valid input"
+      puts "Please put in a valid input"
       print_movies #list_categories
       choose_movie
     end
