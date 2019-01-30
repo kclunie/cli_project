@@ -6,7 +6,7 @@ class CliProject::Movie
   
    def initialize(title=nil, url=nil)
     @title = title
-    @url = url
+    @url = "https://www.imdb.com" + url
     @description = []
     @director = director
     @@all << self
