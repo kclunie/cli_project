@@ -20,10 +20,13 @@ class CliProject::Scraper
     page = Nokogiri::HTML(open(chosen_movie.url))
     
     #movies = page.css("div.list_item")
-    movie_descriptions = page.css("div.outline")
-    movie_descriptions.each do |movie_descrpt|
-    chosen_movie.description << movie_descrpt.text 
-    end
+    movie_descriptions = page.css("div.summary_text")
+    puts movie_descriptions
+    
+    
+    #movie_descriptions.each do |movie_descrpt|
+    #chosen_movie.description << movie_descrpt.text
+    #end
   end
   
   #def scrape_movies_index
