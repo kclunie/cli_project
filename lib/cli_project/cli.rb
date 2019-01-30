@@ -28,6 +28,7 @@ def call
  def scrape_movies
     url = "https://www.imdb.com/movies-coming-soon/"
     movieoptions = CliProject::Scraper.scrape_movies(url)
+    puts movieoptions[1]
   end
 
   def choose_movie
