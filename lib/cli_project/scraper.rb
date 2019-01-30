@@ -15,12 +15,12 @@ class CliProject::Scraper
     end
   end
   
-  def self.scrape_movie_descriptions(url)
+  def self.scrape_movie_descriptions(chosen_movie)
     #url = "https://www.imdb.com/movies-coming-soon/"
-    page = Nokogiri::HTML(open("https://www.imdb.com/movies-coming-soon/"))
+    page = Nokogiri::HTML(open(chosen_movie.url))
     
-    movies = page.css("div.list_item")
-    movie_descriptions = movies.css("div.outliine")
+    #movies = page.css("div.list_item")
+    movie_descriptions = page.css("div.outline")
     movie_descriptions.each do |movie_descrpt|
     chosen_movie.description << movie_descrpt.text 
     end

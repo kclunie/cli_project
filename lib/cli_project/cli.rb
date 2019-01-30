@@ -37,8 +37,8 @@ def call
     if input.between?(1,max_value)
       #puts "yay"
       #code works up until this line
-      #chosen_movie = CliProject::Movie.all[input-1]
-      #display_movie_description(chosen_movie)
+      chosen_movie = CliProject::Movie.all[input-1]
+      display_movie_description(chosen_movie)
     else
       puts "\nPlease put in a valid input"
       print_movies #list_categories
