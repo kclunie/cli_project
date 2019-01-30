@@ -21,11 +21,12 @@ class CliProject::Scraper
     
     #movies = page.css("div.list_item")
     movie_descriptions = page.css("div.summary_text")
-    puts movie_descriptions
+    #puts movie_descriptions
     
     #working until here
     movie_descriptions.each do |movie_descrpt|
-    chosen_movie.description << movie_descrpt.text
+    #chosen_movie.description << movie_descrpt.text
+    puts movie_descrpt.text.strip
     end
   end
   
