@@ -36,7 +36,6 @@ def call
     max_value = CliProject::Movie.all.length 
     if input.between?(1,max_value)
       #puts "yay"
-      #code works up until this line
       chosen_movie = CliProject::Movie.all[input-1]
       display_movie_description(chosen_movie)
     else
