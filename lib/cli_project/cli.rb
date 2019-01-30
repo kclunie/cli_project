@@ -35,11 +35,12 @@ def call
     input = gets.strip.to_i 
     max_value = CliProject::Movie.all.length 
     if input.between?(1,max_value)
-      puts "yay"
+      #puts "yay"
+      #code works up until this line
       #chosen_movie = CliProject::Movie.all[input-1]
       #display_movie_description(chosen_movie)
     else
-      puts "Please put in a valid input"
+      puts "\nPlease put in a valid input"
       print_movies #list_categories
       choose_movie
     end
