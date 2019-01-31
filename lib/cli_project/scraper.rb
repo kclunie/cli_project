@@ -21,6 +21,9 @@ class CliProject::Scraper
     
     #movies = page.css("div.list_item")
     movie_descriptions = page.css("div.summary_text")
+    movie_director = page.css("div.credit_summary_item")[0].text.strip
+    movie_actors = page.css("div.credit_summary_item")[2].text.strip.split("See")
+    movie_writers = page.css("div.credit_summary_item")[1].text.strip.split("3")
     #puts movie_descriptions
     
     #working until here
@@ -28,6 +31,12 @@ class CliProject::Scraper
     #chosen_movie.description << movie_descrpt.text
     puts movie_descrpt.text.strip
     end
+    
+    #movie_director.each do |director|
+      puts movie_director
+      puts movie_actors[0]
+      puts movie_writers[0]
+    #end
   end
   
   #def scrape_movies_index
