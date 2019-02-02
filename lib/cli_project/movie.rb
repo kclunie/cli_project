@@ -1,7 +1,7 @@
 class CliProject::Movie
   
   attr_accessor :title, :url, :description, :director, :duration
-  attr_reader :movies
+  #attr_reader :movies
   
   @@all = []
   
@@ -9,7 +9,7 @@ class CliProject::Movie
     @title = title
     @url = "https://www.imdb.com" + url
     @description = []
-    @movies = []
+    #@movies = []
     @director = director
     @@all << self
   end
@@ -22,9 +22,9 @@ class CliProject::Movie
     #@movies << movie
   #end
   
-    def self.add_movie
+   # def self.add_movie
     #movies = []
-    movies << self.scrape_movies
-  end
+    #@movies << scrape_movies
+  #end
   
 end

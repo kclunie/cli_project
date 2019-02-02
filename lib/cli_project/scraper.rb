@@ -15,6 +15,7 @@ class CliProject::Scraper
       #puts movie.duration
     #puts movie_card.css("td.overview-top h4 a").text
     #CliProject::Movie.movies << movie
+    #CliProject::Movie.add_movie
     end
   end
   
