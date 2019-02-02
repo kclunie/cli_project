@@ -5,15 +5,16 @@ class CliProject::Scraper
   #end
   
   def self.scrape_movies(url)
-    #puts "now in scrape_movies method"
     page = Nokogiri::HTML(open(url))
     movies = page.css("div.list_item")
     movie_titles = movies.css("td.overview-top h4 a")
     movie_titles.map do |movie_card|
       movie = CliProject::Movie.new(movie_card.text, movie_card.attributes["href"].value)
       movie.description = movies.css("div.outline")
-      movie.duration = movies.css("p.cert-runtime-genre time")
+      movie.duration = movies.css("p.cert-runtime-genre time").text.strip
+      #puts movie.duration
     #puts movie_card.css("td.overview-top h4 a").text
+    #CliProject::Movie.movies << movie
     end
   end
   
@@ -38,6 +39,7 @@ class CliProject::Scraper
       puts movie_director
       puts movie_actors[0]
       puts movie_writers[0]
+      #puts movie.duration
     #end
   end
   
