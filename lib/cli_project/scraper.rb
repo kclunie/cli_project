@@ -10,7 +10,9 @@ class CliProject::Scraper
     movies = page.css("div.list_item")
     movie_titles = movies.css("td.overview-top h4 a")
     movie_titles.map do |movie_card|
-      CliProject::Movie.new(movie_card.text, movie_card.attributes["href"].value)
+      movie = CliProject::Movie.new(movie_card.text, movie_card.attributes["href"].value)
+      movie.description = movies.css("div.outline")
+      movie.duration = movies.css("p.cert-runtime-genre time")
     #puts movie_card.css("td.overview-top h4 a").text
     end
   end

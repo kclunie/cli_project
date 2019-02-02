@@ -1,6 +1,6 @@
 class CliProject::Movie
   
-  attr_accessor :title, :url, :description, :director
+  attr_accessor :title, :url, :description, :director, :duration
   
   @@all = []
   
