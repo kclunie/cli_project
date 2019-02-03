@@ -37,9 +37,10 @@ def call
     if input.between?(1,max_value)
       #puts "yay"
       chosen_movie = CliProject::Movie.all[input-1]
-      #puts "#{chosen_movie.description}" 
+      #puts CliProject::Movie.all[input-1].title
+      #print_info(chosen_movie)
+      #puts chosen_movie.description
       display_movie_description(chosen_movie)
-      #display_movie_info(chosen_movie)
     else
       puts "\nPlease put in a valid input"
       print_movies #list_categories
@@ -52,6 +53,11 @@ def call
     chosen_movie.description 
   end
   
+  def print_info(chosen_movie)
+  puts "#{chosen_movie.description}"
+  end
+
+
   #def display_movie_info(chosen_movie)
     #Dealio::Scraper.scrape_items(category)
     #puts "Here are the deals for #{category.name}:\n"

@@ -7,11 +7,16 @@ class CliProject::Scraper
   def self.scrape_movies(url)
     page = Nokogiri::HTML(open(url))
     movies = page.css("div.list_item")
+    
+    #movies.map do |movie_card|
+     # movie = CliProject::Movie.new(movie_card.css("td.overview-top h4 a").text, movie_card.css("td.overview-top h4 a").attributes["href"].value, movie_card.css("div.outline"))
+      
     movie_titles = movies.css("td.overview-top h4 a")
     movie_titles.map do |movie_card|
       movie = CliProject::Movie.new(movie_card.text, movie_card.attributes["href"].value)
-      movie.description = movies.css("div.outline")
-      movie.duration = movies.css("p.cert-runtime-genre time").text.strip
+      
+      #movie.description = movies.css("div.outline").text.strip
+      #movie.duration = movies.css("p.cert-runtime-genre time").text.strip
       #puts movie.duration
     #puts movie_card.css("td.overview-top h4 a").text
     #CliProject::Movie.movies << movie
@@ -24,17 +29,16 @@ class CliProject::Scraper
     page = Nokogiri::HTML(open(chosen_movie.url))
     
     #movies = page.css("div.list_item")
-    movie_descriptions = page.css("div.summary_text")
+    movie_description = page.css("div.summary_text").text.strip
     movie_director = page.css("div.credit_summary_item")[0].text.strip
     movie_actors = page.css("div.credit_summary_item")[2].text.strip.split("See")
     movie_writers = page.css("div.credit_summary_item")[1].text.strip.split("3")
-    #puts movie_descriptions
+    puts movie_description
     
-    #working until here
-    movie_descriptions.each do |movie_descrpt|
-    #chosen_movie.description << movie_descrpt.text
-    puts movie_descrpt.text.strip
-    end
+    
+    #movie_descriptions.each do |movie_descrpt|
+     # puts movie_descrpt.text.strip
+    #end
     
     #movie_director.each do |director|
       puts movie_director

@@ -1,6 +1,6 @@
 class CliProject::Movie
   
-  attr_accessor :title, :url, :description, :director, :duration
+  attr_accessor :title, :url, :description, :director, :duration, :doc
   #attr_reader :movies
   
   @@all = []
@@ -8,15 +8,26 @@ class CliProject::Movie
    def initialize(title=nil, url=nil)
     @title = title
     @url = "https://www.imdb.com" + url
-    @description = []
+    #@description = description
     #@movies = []
-    @director = director
     @@all << self
   end
 
   def self.all
     @@all
   end
+  
+  
+  #def description
+   # @description ||= doc.css("div.outline").text
+  #end
+
+  #def doc
+   # @doc ||= Nokogiri::HTML(open(self.url))
+   #  page = Nokogiri::HTML(open(self.url))
+  #  @doc ||= page.css("div.list_item")
+#  end
+  
   
    #def self.add_movie(movie)
     #@movies << movie
