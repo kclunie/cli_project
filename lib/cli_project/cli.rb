@@ -50,7 +50,7 @@ def call
   
     def display_movie_description(chosen_movie)
     CliProject::Scraper.scrape_movie_descriptions(chosen_movie)
-    puts chosen_movie.description
+    puts "\n#{chosen_movie.description}"
     puts chosen_movie.director
     puts chosen_movie.actor 
     puts chosen_movie.writer 
