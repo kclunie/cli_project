@@ -50,15 +50,34 @@ def call
   
     def display_movie_description(chosen_movie)
     CliProject::Scraper.scrape_movie_descriptions(chosen_movie)
-    puts chosen_movie.description 
+    puts chosen_movie.description
     puts chosen_movie.director
     puts chosen_movie.actor 
     puts chosen_movie.writer 
+    second_menu
   end
   
-  def print_info(chosen_movie)
-  puts "#{chosen_movie.description}"
+  def second_menu
+    puts "Would you like to see another movie? Type 'Y'"
+    puts "Would you like to exit? Type 'E'"
+    input = gets.strip.upcase
+    if input == "Y"
+       print_movies
+       choose_movie
+    elsif input == "E"
+      puts "Goodbye!"
+    else
+      puts "Sorry I couldn't understand that command"
+      second_menu
+    end
   end
+  
+  
+  
+  
+  #def print_info(chosen_movie)
+  #puts "#{chosen_movie.description}"
+  #end
 
 
   #def display_movie_info(chosen_movie)
