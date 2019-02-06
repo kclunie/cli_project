@@ -29,11 +29,11 @@ class CliProject::Scraper
     page = Nokogiri::HTML(open(chosen_movie.url))
     
     #movies = page.css("div.list_item")
-    movie_description = page.css("div.summary_text").text.strip
-    movie_director = page.css("div.credit_summary_item")[0].text.strip
-    movie_actors = page.css("div.credit_summary_item")[2].text.strip.split("See")
-    movie_writers = page.css("div.credit_summary_item")[1].text.strip.split("3")
-    puts movie_description
+    chosen_movie.description = page.css("div.summary_text").text.strip
+    chosen_movie.director = page.css("div.credit_summary_item")[0].text.strip
+    chosen_movie.actor = page.css("div.credit_summary_item")[2].text.strip.split("See")
+    chosen_movie.writer = page.css("div.credit_summary_item")[1].text.strip.split("3")
+    #puts movie_description
     
     
     #movie_descriptions.each do |movie_descrpt|
@@ -41,9 +41,9 @@ class CliProject::Scraper
     #end
     
     #movie_director.each do |director|
-      puts movie_director
-      puts movie_actors[0]
-      puts movie_writers[0]
+      #puts movie_director
+      #puts movie_actors[0]
+      #puts movie_writers[0]
       #puts movie.duration
     #end
   end
