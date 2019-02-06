@@ -54,6 +54,9 @@ def call
     puts chosen_movie.director
     puts chosen_movie.actor 
     puts chosen_movie.writer 
+    puts chosen_movie.rating 
+    puts chosen_movie.duration
+    #puts chosen_movie.release_date
     second_menu
   end
   
