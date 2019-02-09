@@ -51,12 +51,13 @@ def call
     def display_movie_description(chosen_movie)
     CliProject::Scraper.scrape_movie_descriptions(chosen_movie)
     puts "\nDescription: #{chosen_movie.description}"
-    puts "\nIMDB Rating: #{chosen_movie.stars}"
     puts chosen_movie.director
     puts chosen_movie.actor 
     puts chosen_movie.writer 
-    puts chosen_movie.rating 
-    puts chosen_movie.duration
+    puts chosen_movie.release_date
+    puts chosen_movie.stars
+    #puts chosen_movie.rating 
+    #puts chosen_movie.duration
     #puts chosen_movie.release_date
     second_menu
   end

@@ -30,13 +30,14 @@ class CliProject::Scraper
     
     #movies = page.css("div.list_item")
     chosen_movie.description = page.css("div.summary_text").text.strip
-    chosen_movie.stars = page.css("div.imdbRating div.ratingValue").text.strip
     chosen_movie.director = page.css("div.credit_summary_item")[0].text.strip
     chosen_movie.actor = page.css("div.credit_summary_item")[2].text.strip.split("|")[0]
     chosen_movie.writer = page.css("div.credit_summary_item")[1].text.strip.split("|")[0]
+    chosen_movie.release_date = page.css("div.info.table-cell p").text.strip
+     chosen_movie.stars = page.css("div.imdbRating div.ratingValue").text.strip if page.css("div.imdbRating div.ratingValue").text.strip
     
-    chosen_movie.rating = page.css("div.subtext").text.strip.split("|")[0].strip
-    chosen_movie.duration = page.css("div.subtext").text.strip.split("|")[1].strip
+    #chosen_movie.rating = page.css("div.subtext").text.strip.split("|")[0].strip
+    #chosen_movie.duration = page.css("div.subtext").text.strip.split("|")[1].strip
     
     #not working well:
     #chosen_movie.release_date = page.css("div.subtext").text.strip.split("|")[3].strip
