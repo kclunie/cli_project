@@ -1,8 +1,8 @@
 class CliProject::CLI
 
 def call
-    puts "Welcome to Upcoming Movies!"
-    puts "What movie would you like more information on?"
+    puts "Welcome to Upcoming Movies!".colorize(:yellow)
+    puts "What movie would you like more information on?".colorize(:green)
     scrape_movies
     print_movies
     choose_movie
@@ -20,7 +20,7 @@ def call
   end
 
   def choose_movie
-    puts "\nChoose a movie by selecting a number:"
+    puts "\nChoose a movie by selecting a number:".colorize(:green)
     input = gets.strip.to_i 
     max_value = CliProject::Movie.all.length 
     if input.between?(1,max_value)
@@ -45,14 +45,14 @@ def call
   end
   
   def second_menu
-    puts "\nWould you like to see another movie? Type 'Y'"
-    puts "Would you like to exit? Type 'E'"
+    puts "\nWould you like to see another movie? Type 'Y'".colorize(:green)
+    puts "Would you like to exit? Type 'E'".colorize(:green)
     input = gets.strip.upcase
     if input == "Y"
        print_movies
        choose_movie
     elsif input == "E"
-      puts "Goodbye!"
+      puts "Goodbye!".colorize(:red)
     else
       puts "Sorry I couldn't understand that command"
       second_menu
