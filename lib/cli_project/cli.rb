@@ -1,6 +1,6 @@
 class CliProject::CLI
 
-def call
+  def call
     puts "Welcome to Upcoming Movies!".colorize(:yellow)
     puts "What movie would you like more information on?".colorize(:green)
     scrape_movies
@@ -14,7 +14,7 @@ def call
     end
   end
 
- def scrape_movies
+  def scrape_movies
     url = "https://www.imdb.com/movies-coming-soon/"
     movieoptions = CliProject::Scraper.scrape_movies(url)
   end
@@ -33,7 +33,7 @@ def call
     end
   end
   
-    def display_movie_description(chosen_movie)
+  def display_movie_description(chosen_movie)
     CliProject::Scraper.scrape_movie_descriptions(chosen_movie)
     puts "\nDescription: #{chosen_movie.description}"
     puts chosen_movie.director
