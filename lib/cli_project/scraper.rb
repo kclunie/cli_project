@@ -16,7 +16,7 @@ class CliProject::Scraper
     chosen_movie.actor = page.css("div.credit_summary_item")[2].text.strip.split("|")[0]
     chosen_movie.writer = page.css("div.credit_summary_item")[1].text.strip.split("|")[0]
     chosen_movie.release_date = page.css("div.info.table-cell p").text.strip
-     chosen_movie.stars = page.css("div.imdbRating div.ratingValue").text.strip if page.css("div.imdbRating div.ratingValue").text.strip
+    chosen_movie.stars = page.css("div.imdbRating div.ratingValue").text.strip if page.css("div.imdbRating div.ratingValue").text.strip
   end
   
 end
